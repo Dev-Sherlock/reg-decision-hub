@@ -1,0 +1,147 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "Universal Symbolic Memory Hub" [level=1] [ref=e5]
+    - navigation [ref=e6]:
+      - button "Memory" [ref=e7] [cursor=pointer]
+      - button "LLM Chat" [ref=e8] [cursor=pointer]
+      - button "Decision Tree" [ref=e9] [cursor=pointer]
+    - generic [ref=e33]:
+      - generic [ref=e34]: prolog 1ms
+      - generic [ref=e35]: postgresql 4ms
+      - generic [ref=e36]: embeddings 25ms
+      - generic [ref=e37]: llm 8ms
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - heading "Symbolic Memory" [level=2] [ref=e13]
+        - generic [ref=e14]:
+          - button "Facts" [ref=e15] [cursor=pointer]
+          - button "Rules" [ref=e16] [cursor=pointer]
+          - button "Search" [ref=e17] [cursor=pointer]
+      - generic [ref=e18]:
+        - generic [ref=e705]:
+          - generic [ref=e706]:
+            - textbox "rule name" [ref=e707]
+            - button "Store rule" [ref=e708] [cursor=pointer]
+          - textbox "head, e.g. fact(X, colleague_of, Y)" [ref=e709]: fact(X, colleague_of, Y)
+          - textbox "body, e.g. [fact(X, works_at, Y)]" [ref=e710]: "[fact(X, works_at, Y)]"
+        - list [ref=e711]:
+          - listitem [ref=e712]:
+            - generic [ref=e713]:
+              - generic [ref=e714]: certified_oncall_for_vulnerable_host
+              - generic [ref=e715]:
+                - button "Test" [ref=e716] [cursor=pointer]
+                - button "Derive & store" [ref=e717] [cursor=pointer]
+                - button "Delete" [ref=e718] [cursor=pointer]
+            - generic [ref=e719]: IF [fact(P, certified, true), fact(P, escalation_tier, 1), fact(P, works_at, H), fact(H, open_cves, C), C > 0]
+            - generic [ref=e720]: THEN fact(P, oncall_assignment, primary_for_emergency_patch)
+          - listitem [ref=e721]:
+            - generic [ref=e722]:
+              - generic [ref=e723]: cryostat_below_design_temperature
+              - generic [ref=e724]:
+                - button "Test" [ref=e725] [cursor=pointer]
+                - button "Derive & store" [ref=e726] [cursor=pointer]
+                - button "Delete" [ref=e727] [cursor=pointer]
+            - generic [ref=e728]: IF [fact(X, operating_temp_k, K), K < 4]
+            - generic [ref=e729]: THEN fact(X, lab_action, hold_for_warmup)
+          - listitem [ref=e730]:
+            - generic [ref=e731]:
+              - generic [ref=e732]: occupied_and_warm
+              - generic [ref=e733]:
+                - button "Test" [ref=e734] [cursor=pointer]
+                - button "Derive & store" [ref=e735] [cursor=pointer]
+                - button "Delete" [ref=e736] [cursor=pointer]
+            - generic [ref=e737]: IF [fact(X, occupancy, true), fact(X, temperature_c, T), T > 26]
+            - generic [ref=e738]: THEN fact(X, comfort_action, reduce_heating)
+          - listitem [ref=e739]:
+            - generic [ref=e740]:
+              - generic [ref=e741]: privileged_account_without_mfa
+              - generic [ref=e742]:
+                - button "Test" [active] [ref=e743] [cursor=pointer]
+                - button "Derive & store" [ref=e744] [cursor=pointer]
+                - button "Delete" [ref=e745] [cursor=pointer]
+            - generic [ref=e746]: IF [fact(P, works_at, H), fact(P, privileged, true), fact(H, mfa_enabled, false)]
+            - generic [ref=e747]: THEN fact(P, access_risk, require_mfa)
+            - list [ref=e829]:
+              - listitem [ref=e830]: account_alex.access_risk = require_mfa
+          - listitem [ref=e748]:
+            - generic [ref=e749]:
+              - generic [ref=e750]: sensor_battery_low
+              - generic [ref=e751]:
+                - button "Test" [ref=e752] [cursor=pointer]
+                - button "Derive & store" [ref=e753] [cursor=pointer]
+                - button "Delete" [ref=e754] [cursor=pointer]
+            - generic [ref=e755]: IF [fact(X, battery_pct, B), B < 20]
+            - generic [ref=e756]: THEN fact(X, maintenance_action, replace_battery)
+          - listitem [ref=e757]:
+            - generic [ref=e758]:
+              - generic [ref=e759]: site_over_capacity_on_battery
+              - generic [ref=e760]:
+                - button "Test" [ref=e761] [cursor=pointer]
+                - button "Derive & store" [ref=e762] [cursor=pointer]
+                - button "Delete" [ref=e763] [cursor=pointer]
+            - generic [ref=e764]: IF [fact(S, demand_kw, D), fact(S, capacity_kw, C), D > C, fact(S, ups, U), fact(U, on_battery, true)]
+            - generic [ref=e765]: THEN fact(S, grid_action, shed_noncritical_load)
+          - listitem [ref=e766]:
+            - generic [ref=e767]:
+              - generic [ref=e768]: stale_unpatched_host
+              - generic [ref=e769]:
+                - button "Test" [ref=e770] [cursor=pointer]
+                - button "Derive & store" [ref=e771] [cursor=pointer]
+                - button "Delete" [ref=e772] [cursor=pointer]
+            - generic [ref=e773]: IF [fact(X, open_cves, C), C > 0, fact(X, patch_age_days, D), D > 30]
+            - generic [ref=e774]: THEN fact(X, patch_action, emergency_patch)
+          - listitem [ref=e775]:
+            - generic [ref=e776]:
+              - generic [ref=e777]: storage_degraded
+              - generic [ref=e778]:
+                - button "Test" [ref=e779] [cursor=pointer]
+                - button "Derive & store" [ref=e780] [cursor=pointer]
+                - button "Delete" [ref=e781] [cursor=pointer]
+            - generic [ref=e782]: IF [fact(X, disk_health_pct, H), H < 70, fact(X, raid_state, degraded)]
+            - generic [ref=e783]: THEN fact(X, storage_action, replace_failed_disk)
+          - listitem [ref=e784]:
+            - generic [ref=e785]:
+              - generic [ref=e786]: thermostat_overshooting_sensor
+              - generic [ref=e787]:
+                - button "Test" [ref=e788] [cursor=pointer]
+                - button "Derive & store" [ref=e789] [cursor=pointer]
+                - button "Delete" [ref=e790] [cursor=pointer]
+            - generic [ref=e791]: IF [fact(X, mode, heating), fact(X, setpoint_c, S), fact(X, linked_sensor, L), fact(L, temperature_c, T), T > S]
+            - generic [ref=e792]: THEN fact(X, comfort_conflict, over_heating)
+          - listitem [ref=e793]:
+            - generic [ref=e794]:
+              - generic [ref=e795]: unencrypted_exposed_host
+              - generic [ref=e796]:
+                - button "Test" [ref=e797] [cursor=pointer]
+                - button "Derive & store" [ref=e798] [cursor=pointer]
+                - button "Delete" [ref=e799] [cursor=pointer]
+            - generic [ref=e800]: IF [fact(X, encryption_enabled, false), fact(X, open_cves, C), C > 0]
+            - generic [ref=e801]: THEN fact(X, encryption_action, enable_full_disk_encryption)
+          - listitem [ref=e802]:
+            - generic [ref=e803]:
+              - generic [ref=e804]: unverified_backup_on_degraded_storage
+              - generic [ref=e805]:
+                - button "Test" [ref=e806] [cursor=pointer]
+                - button "Derive & store" [ref=e807] [cursor=pointer]
+                - button "Delete" [ref=e808] [cursor=pointer]
+            - generic [ref=e809]: IF [fact(X, verified, false), fact(X, target, T), fact(T, raid_state, degraded)]
+            - generic [ref=e810]: THEN fact(X, backup_risk, treat_backup_as_lost)
+          - listitem [ref=e811]:
+            - generic [ref=e812]:
+              - generic [ref=e813]: unverified_host_backup
+              - generic [ref=e814]:
+                - button "Test" [ref=e815] [cursor=pointer]
+                - button "Derive & store" [ref=e816] [cursor=pointer]
+                - button "Delete" [ref=e817] [cursor=pointer]
+            - generic [ref=e818]: IF [fact(X, backup_verified, false), fact(X, open_cves, C), C > 0]
+            - generic [ref=e819]: THEN fact(X, backup_risk, schedule_verified_backup)
+          - listitem [ref=e820]:
+            - generic [ref=e821]:
+              - generic [ref=e822]: ups_discharge_soon
+              - generic [ref=e823]:
+                - button "Test" [ref=e824] [cursor=pointer]
+                - button "Derive & store" [ref=e825] [cursor=pointer]
+                - button "Delete" [ref=e826] [cursor=pointer]
+            - generic [ref=e827]: IF [fact(U, on_battery, true), fact(U, battery_pct, B), B < 70]
+            - generic [ref=e828]: THEN fact(U, power_action, start_generator)

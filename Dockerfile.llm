@@ -1,0 +1,30 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies for llama-cpp-python
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    libopenblas-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements-llm.txt .
+RUN pip install --no-cache-dir -r requirements-llm.txt
+
+# Copy application code
+COPY src/llm /app/llm
+
+# MODEL_PATH / N_CTX / N_GPU_LAYERS / REPEAT_PENALTY come from .env (see
+# .env.example) so the same image works with any GGUF dropped into ./models.
+ENV PYTHONPATH=/app
+ENV N_CTX=2048
+ENV N_GPU_LAYERS=0
+ENV REPEAT_PENALTY=1.15
+
+EXPOSE 8001
+
+# Start period is generous: the GGUF is mmap-loaded and can take a while.
+CMD ["python", "-m", "uvicorn", "llm.server:app", "--host", "0.0.0.0", "--port", "8001"]

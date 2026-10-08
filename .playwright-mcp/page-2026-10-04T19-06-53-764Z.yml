@@ -1,0 +1,132 @@
+- generic [ref=f6e3]:
+  - banner [ref=f6e4]:
+    - heading "Universal Symbolic Memory Hub" [level=1] [ref=f6e5]
+    - navigation [ref=f6e6]:
+      - button "Memory" [ref=f6e7] [cursor=pointer]
+      - button "LLM Chat" [ref=f6e8] [cursor=pointer]
+      - button "Decision Tree" [ref=f6e9] [cursor=pointer]
+  - main [ref=f6e10]:
+    - generic [ref=f6e11]:
+      - generic [ref=f6e12]:
+        - heading "Symbolic Memory" [level=2] [ref=f6e13]
+        - generic [ref=f6e14]:
+          - button "Facts" [ref=f6e15] [cursor=pointer]
+          - button "Rules" [ref=f6e16] [cursor=pointer]
+          - button "Search" [ref=f6e17] [cursor=pointer]
+      - generic [ref=f6e18]:
+        - generic [ref=f6e19]:
+          - generic [ref=f6e20]:
+            - text: Subject
+            - textbox "Subject" [ref=f6e21]:
+              - /placeholder: "* for any"
+              - text: "*"
+          - generic [ref=f6e22]:
+            - text: Predicate
+            - textbox "Predicate" [ref=f6e23]:
+              - /placeholder: "* for any"
+              - text: "*"
+          - button "Apply" [ref=f6e24] [cursor=pointer]
+        - generic [ref=f6e25]:
+          - textbox "subject" [ref=f6e26]
+          - textbox "predicate" [ref=f6e27]
+          - textbox "value (22, \"Acme Corp\", [a, b])" [ref=f6e28]
+          - textbox "owner (optional)" [ref=f6e29]
+          - button "Store fact" [ref=f6e30] [cursor=pointer]
+        - table [ref=f6e31]:
+          - rowgroup [ref=f6e32]:
+            - row [ref=f6e33]:
+              - columnheader "Subject" [ref=f6e34]
+              - columnheader "Predicate" [ref=f6e35]
+              - columnheader "Value" [ref=f6e36]
+              - columnheader "v" [ref=f6e37]
+              - columnheader "Updated" [ref=f6e38]
+              - columnheader [ref=f6e39]
+          - rowgroup [ref=f6e40]:
+            - row [ref=f6e41]:
+              - cell "cryostat" [ref=f6e42]
+              - cell "field" [ref=f6e43]
+              - cell "superconducting_magnets" [ref=f6e44]
+              - cell "16" [ref=f6e45]
+              - cell "2026-10-04T13:43:49" [ref=f6e46]
+              - cell [ref=f6e47]:
+                - button "Delete" [ref=f6e48] [cursor=pointer]
+            - row [ref=f6e49]:
+              - cell "cryostat" [ref=f6e50]
+              - cell "operating_temp_k" [ref=f6e51]
+              - cell "4" [ref=f6e52]
+              - cell "16" [ref=f6e53]
+              - cell "2026-10-04T13:43:50" [ref=f6e54]
+              - cell [ref=f6e55]:
+                - button "Delete" [ref=f6e56] [cursor=pointer]
+            - row [ref=f6e57]:
+              - cell "cryostat" [ref=f6e58]
+              - cell "operator" [ref=f6e59]
+              - cell "globex_labs" [ref=f6e60]
+              - cell "16" [ref=f6e61]
+              - cell "2026-10-04T13:43:50" [ref=f6e62]
+              - cell [ref=f6e63]:
+                - button "Delete" [ref=f6e64] [cursor=pointer]
+            - row [ref=f6e65]:
+              - cell "eval_degradation_probe" [ref=f6e66]
+              - cell "status" [ref=f6e67]
+              - cell "writable_without_llm" [ref=f6e68]
+              - cell "15" [ref=f6e69]
+              - cell "2026-10-04T03:43:12" [ref=f6e70]
+              - cell [ref=f6e71]:
+                - button "Delete" [ref=f6e72] [cursor=pointer]
+            - row [ref=f6e73]:
+              - cell "eval_governance_probe" [ref=f6e74]
+              - cell "policy" [ref=f6e75]
+              - cell "amended" [ref=f6e76]
+              - cell "34" [ref=f6e77]
+              - cell "2026-10-04T13:43:42" [ref=f6e78]
+              - cell [ref=f6e79]:
+                - button "Delete" [ref=f6e80] [cursor=pointer]
+            - row [ref=f6e81]:
+              - cell "flux_cap" [ref=f6e82]
+              - cell "critical_field_tesla" [ref=f6e83]
+              - cell "22" [ref=f6e84]
+              - cell "16" [ref=f6e85]
+              - cell "2026-10-04T13:43:49" [ref=f6e86]
+              - cell [ref=f6e87]:
+                - button "Delete" [ref=f6e88] [cursor=pointer]
+            - row [ref=f6e89]:
+              - cell "flux_cap" [ref=f6e90]
+              - cell "field" [ref=f6e91]
+              - cell "material_science" [ref=f6e92]
+              - cell "16" [ref=f6e93]
+              - cell "2026-10-04T13:43:49" [ref=f6e94]
+              - cell [ref=f6e95]:
+                - button "Delete" [ref=f6e96] [cursor=pointer]
+            - row [ref=f6e97]:
+              - cell "flux_cap" [ref=f6e98]
+              - cell "operator" [ref=f6e99]
+              - cell "acme_energy" [ref=f6e100]
+              - cell "16" [ref=f6e101]
+              - cell "2026-10-04T13:43:49" [ref=f6e102]
+              - cell [ref=f6e103]:
+                - button "Delete" [ref=f6e104] [cursor=pointer]
+            - row [ref=f6e105]:
+              - cell "heliostat" [ref=f6e106]
+              - cell "aperture_m2" [ref=f6e107]
+              - cell "1200" [ref=f6e108]
+              - cell "16" [ref=f6e109]
+              - cell "2026-10-04T13:43:49" [ref=f6e110]
+              - cell [ref=f6e111]:
+                - button "Delete" [ref=f6e112] [cursor=pointer]
+            - row [ref=f6e113]:
+              - cell "heliostat" [ref=f6e114]
+              - cell "field" [ref=f6e115]
+              - cell "solar_thermal" [ref=f6e116]
+              - cell "16" [ref=f6e117]
+              - cell "2026-10-04T13:43:49" [ref=f6e118]
+              - cell [ref=f6e119]:
+                - button "Delete" [ref=f6e120] [cursor=pointer]
+            - row [ref=f6e121]:
+              - cell "heliostat" [ref=f6e122]
+              - cell "operator" [ref=f6e123]
+              - cell "acme_energy" [ref=f6e124]
+              - cell "16" [ref=f6e125]
+              - cell "2026-10-04T13:43:49" [ref=f6e126]
+              - cell [ref=f6e127]:
+                - button "Delete" [ref=f6e128] [cursor=pointer]

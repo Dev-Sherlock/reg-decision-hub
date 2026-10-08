@@ -1,0 +1,132 @@
+# Regulated Decision-Tree Agent Hub — universal symbolic memory stack.
+#
+# Containers:
+#   api       FastAPI: orchestrates Prolog (embedded via pyswip),
+#             PostgreSQL (facts + pgvector) and the LLM service.
+#   llm       llama-cpp-python server. Optional — the API degrades gracefully
+#             when it is missing or has no model loaded.
+#   postgres  PostgreSQL 16 + pgvector: fact store, rule store, audit trail.
+#   ui        React/Vite frontend.
+#
+# There is deliberately NO prolog container: SWI-Prolog is embedded in-process
+# in the api container via pyswip.
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: reg-decision-api
+    ports:
+      # Parameterised because 8000 is a common collision on a shared machine.
+      # Set API_HOST_PORT to move the host side; the container port stays 8000.
+      # The UI reaches the API from the browser, so set VITE_API_URL to match.
+      - "${API_HOST_PORT:-8000}:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/regdecision
+      - LLM_SERVICE_URL=${LLM_SERVICE_URL:-http://llm:8001}
+      - LLM_PROVIDER=${LLM_PROVIDER:-http}
+      - KB_PATH=${KB_PATH:-/kb/symbolic_memory.pl}
+      - DECISION_TREE_PATH=${DECISION_TREE_PATH:-/kb/decision_tree.pl}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-sentence-transformers/all-MiniLM-L6-v2}
+      - EMBEDDING_DIM=${EMBEDDING_DIM:-384}
+      - ADMIN_API_KEY=${ADMIN_API_KEY:-}
+      # Embedding model cache — avoids re-downloading on every container start.
+      - HF_HOME=/cache/huggingface
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./src:/app/src:ro
+      - ./kb:/kb:ro
+      - ./scripts:/app/scripts:ro
+      - hf_cache:/cache/huggingface
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/all')"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    networks:
+      - reg-decision-net
+
+  llm:
+    build:
+      context: .
+      dockerfile: Dockerfile.llm
+    container_name: reg-decision-llm
+    ports:
+      - "8001:8001"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - MODEL_PATH=${MODEL_PATH:-/models/SmolLM2-135M-Instruct-Q4_K_M.gguf}
+      - N_CTX=${N_CTX:-2048}
+      - N_GPU_LAYERS=${N_GPU_LAYERS:-0}
+      - REPEAT_PENALTY=${REPEAT_PENALTY:-1.15}
+    volumes:
+      - ./models:/models:ro
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    networks:
+      - reg-decision-net
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: reg-decision-postgres
+    environment:
+      - POSTGRES_DB=regdecision
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d regdecision"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - reg-decision-net
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: reg-decision-ui
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=${VITE_API_URL:-http://localhost:8000}
+    depends_on:
+      - api
+    volumes:
+      # Read-write on purpose: the Vite dev server writes a temporary bundled
+      # config (vite.config.ts.timestamp-*.mjs) next to the config file, and
+      # fails to start against a read-only project root.
+      - ./ui:/app
+      - /app/node_modules
+    networks:
+      - reg-decision-net
+
+volumes:
+  postgres_data:
+  hf_cache:
+
+networks:
+  reg-decision-net:
+    driver: bridge

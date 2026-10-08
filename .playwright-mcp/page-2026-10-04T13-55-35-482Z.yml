@@ -1,0 +1,35 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - heading "Universal Symbolic Memory Hub" [level=1] [ref=f1e5]
+    - navigation [ref=f1e6]:
+      - button "Memory" [ref=f1e7] [cursor=pointer]
+      - button "LLM Chat" [ref=f1e8] [cursor=pointer]
+      - button "Decision Tree" [ref=f1e9] [cursor=pointer]
+  - main [ref=f1e10]:
+    - generic [ref=f1e11]:
+      - generic [ref=f1e12]:
+        - heading "Symbolic Memory" [level=2] [ref=f1e13]
+        - generic [ref=f1e14]:
+          - button "Facts" [ref=f1e15] [cursor=pointer]
+          - button "Rules" [ref=f1e16] [cursor=pointer]
+          - button "Search" [ref=f1e17] [cursor=pointer]
+      - generic [ref=f1e18]:
+        - generic [ref=f1e19]:
+          - generic [ref=f1e20]:
+            - text: Subject
+            - textbox "Subject" [ref=f1e21]:
+              - /placeholder: "* for any"
+              - text: "*"
+          - generic [ref=f1e22]:
+            - text: Predicate
+            - textbox "Predicate" [ref=f1e23]:
+              - /placeholder: "* for any"
+              - text: "*"
+          - button "Loading..." [disabled] [ref=f1e24] [cursor=pointer]
+        - generic [ref=f1e25]:
+          - textbox "subject" [ref=f1e26]
+          - textbox "predicate" [ref=f1e27]
+          - textbox "value (22, \"Acme Corp\", [a, b])" [ref=f1e28]
+          - textbox "owner (optional)" [ref=f1e29]
+          - button "Store fact" [ref=f1e30] [cursor=pointer]
+        - paragraph [ref=f1e32]: No facts match this filter.

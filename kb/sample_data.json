@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "description": "Mixed-domain sample data for the universal symbolic memory. Six unrelated domains share one fact store, so a single rule can join a person's account to a host's patch level or a site's load to a UPS on battery. Nothing here is domain-specific to the memory layer: every entry is subject/predicate/value, which is the whole interface.",
+
+  "domains": {
+    "homeserver": ["nas_01", "ups_01", "backup_nas"],
+    "iot": ["sensor_living_room_01", "sensor_garage_01", "thermostat_hall"],
+    "cyber": ["host_web_01", "host_db_01", "host_lab_01"],
+    "energy": ["site_north", "site_south"],
+    "lab": ["cryostat", "heliostat", "flux_cap"],
+    "people": ["account_alex", "oncall_alex", "oncall_robin"]
+  },
+
+  "facts": [
+    { "subject": "nas_01", "predicate": "role", "value": "network_attached_storage" },
+    { "subject": "nas_01", "predicate": "disk_count", "value": 8 },
+    { "subject": "nas_01", "predicate": "disk_health_pct", "value": 64 },
+    { "subject": "nas_01", "predicate": "raid_state", "value": "degraded" },
+    { "subject": "nas_01", "predicate": "temperature_c", "value": 38 },
+    { "subject": "nas_01", "predicate": "uptime_days", "value": 412 },
+    { "subject": "nas_01", "predicate": "services", "value": ["smb", "nfs", "ssh"] },
+    { "subject": "nas_01", "predicate": "warranty_expires", "value": "2027-03-01" },
+
+    { "subject": "ups_01", "predicate": "battery_pct", "value": 62 },
+    { "subject": "ups_01", "predicate": "on_battery", "value": true },
+    { "subject": "ups_01", "predicate": "runtime_minutes", "value": 11 },
+    { "subject": "ups_01", "predicate": "input_voltage", "value": 228 },
+
+    { "subject": "backup_nas", "predicate": "last_backup", "value": "2026-10-02" },
+    { "subject": "backup_nas", "predicate": "verified", "value": false },
+    { "subject": "backup_nas", "predicate": "target", "value": "nas_01" },
+
+    { "subject": "sensor_living_room_01", "predicate": "temperature_c", "value": 27.4 },
+    { "subject": "sensor_living_room_01", "predicate": "humidity_pct", "value": 61 },
+    { "subject": "sensor_living_room_01", "predicate": "occupancy", "value": true },
+    { "subject": "sensor_living_room_01", "predicate": "battery_pct", "value": 18 },
+    { "subject": "sensor_living_room_01", "predicate": "firmware", "value": "2.4.1" },
+
+    { "subject": "sensor_garage_01", "predicate": "temperature_c", "value": 11.2 },
+    { "subject": "sensor_garage_01", "predicate": "humidity_pct", "value": 44 },
+    { "subject": "sensor_garage_01", "predicate": "occupancy", "value": false },
+    { "subject": "sensor_garage_01", "predicate": "battery_pct", "value": 91 },
+    { "subject": "sensor_garage_01", "predicate": "firmware", "value": "2.4.1" },
+
+    { "subject": "thermostat_hall", "predicate": "setpoint_c", "value": 23.5 },
+    { "subject": "thermostat_hall", "predicate": "mode", "value": "heating" },
+    { "subject": "thermostat_hall", "predicate": "linked_sensor", "value": "sensor_living_room_01" },
+
+    { "subject": "host_web_01", "predicate": "role", "value": "public_web_server" },
+    { "subject": "host_web_01", "predicate": "patch_age_days", "value": 47 },
+    { "subject": "host_web_01", "predicate": "open_cves", "value": 3 },
+    { "subject": "host_web_01", "predicate": "mfa_enabled", "value": false },
+    { "subject": "host_web_01", "predicate": "encryption_enabled", "value": true },
+    { "subject": "host_web_01", "predicate": "backup_verified", "value": true },
+    { "subject": "host_web_01", "predicate": "services", "value": ["http", "ssh"] },
+
+    { "subject": "host_db_01", "predicate": "role", "value": "database_server" },
+    { "subject": "host_db_01", "predicate": "patch_age_days", "value": 5 },
+    { "subject": "host_db_01", "predicate": "open_cves", "value": 0 },
+    { "subject": "host_db_01", "predicate": "mfa_enabled", "value": true },
+    { "subject": "host_db_01", "predicate": "encryption_enabled", "value": true },
+    { "subject": "host_db_01", "predicate": "backup_verified", "value": false },
+
+    { "subject": "host_lab_01", "predicate": "role", "value": "instrument_controller" },
+    { "subject": "host_lab_01", "predicate": "patch_age_days", "value": 61 },
+    { "subject": "host_lab_01", "predicate": "open_cves", "value": 1 },
+    { "subject": "host_lab_01", "predicate": "mfa_enabled", "value": false },
+    { "subject": "host_lab_01", "predicate": "encryption_enabled", "value": false },
+    { "subject": "host_lab_01", "predicate": "backup_verified", "value": false },
+    { "subject": "host_lab_01", "predicate": "services", "value": ["ssh"] },
+
+    { "subject": "site_north", "predicate": "demand_kw", "value": 92 },
+    { "subject": "site_north", "predicate": "capacity_kw", "value": 80 },
+    { "subject": "site_north", "predicate": "temperature_c", "value": 34 },
+    { "subject": "site_north", "predicate": "humidity_pct", "value": 74 },
+    { "subject": "site_north", "predicate": "tariff", "value": "peak" },
+    { "subject": "site_north", "predicate": "ups", "value": "ups_01" },
+
+    { "subject": "site_south", "predicate": "demand_kw", "value": 61 },
+    { "subject": "site_south", "predicate": "capacity_kw", "value": 80 },
+    { "subject": "site_south", "predicate": "temperature_c", "value": 22 },
+    { "subject": "site_south", "predicate": "humidity_pct", "value": 48 },
+    { "subject": "site_south", "predicate": "tariff", "value": "offpeak" },
+    { "subject": "site_south", "predicate": "ups", "value": "ups_01" },
+
+    { "subject": "cryostat", "predicate": "field", "value": "superconducting_magnets" },
+    { "subject": "cryostat", "predicate": "operator", "value": "globex_labs" },
+    { "subject": "cryostat", "predicate": "operating_temp_k", "value": 4 },
+
+    { "subject": "heliostat", "predicate": "field", "value": "solar_thermal" },
+    { "subject": "heliostat", "predicate": "operator", "value": "acme_energy" },
+    { "subject": "heliostat", "predicate": "aperture_m2", "value": 1200 },
+
+    { "subject": "flux_cap", "predicate": "field", "value": "material_science" },
+    { "subject": "flux_cap", "predicate": "operator", "value": "acme_energy" },
+    { "subject": "flux_cap", "predicate": "critical_field_tesla", "value": 22 },
+
+    { "subject": "account_alex", "predicate": "works_at", "value": "host_web_01" },
+    { "subject": "account_alex", "predicate": "role", "value": "site_reliability_engineer" },
+    { "subject": "account_alex", "predicate": "privileged", "value": true },
+
+    { "subject": "oncall_alex", "predicate": "escalation_tier", "value": 1 },
+    { "subject": "oncall_alex", "predicate": "certified", "value": true },
+    { "subject": "oncall_alex", "predicate": "phone", "value": "+1-555-0142" },
+    { "subject": "oncall_alex", "predicate": "works_at", "value": "host_web_01" },
+
+    { "subject": "oncall_robin", "predicate": "escalation_tier", "value": 2 },
+    { "subject": "oncall_robin", "predicate": "certified", "value": false },
+    { "subject": "oncall_robin", "predicate": "phone", "value": "+1-555-0199" }
+  ],
+
+  "rules": [
+    {
+      "name": "storage_degraded",
+      "head": "fact(X, storage_action, replace_failed_disk)",
+      "body": "[fact(X, disk_health_pct, H), H < 70, fact(X, raid_state, degraded)]",
+      "expect": [["nas_01", "storage_action", "replace_failed_disk"]],
+      "note": "64% disk health on a degraded RAID. Single subject, so no join."
+    },
+    {
+      "name": "stale_unpatched_host",
+      "head": "fact(X, patch_action, emergency_patch)",
+      "body": "[fact(X, open_cves, C), C > 0, fact(X, patch_age_days, D), D > 30]",
+      "expect": [
+        ["host_lab_01", "patch_action", "emergency_patch"],
+        ["host_web_01", "patch_action", "emergency_patch"]
+      ],
+      "note": "host_db_01 has no open CVEs, so it never qualifies."
+    },
+    {
+      "name": "unencrypted_exposed_host",
+      "head": "fact(X, encryption_action, enable_full_disk_encryption)",
+      "body": "[fact(X, encryption_enabled, false), fact(X, open_cves, C), C > 0]",
+      "expect": [["host_lab_01", "encryption_action", "enable_full_disk_encryption"]],
+      "note": "Only the lab controller is both unencrypted and exposed."
+    },
+    {
+      "name": "privileged_account_without_mfa",
+      "head": "fact(P, access_risk, require_mfa)",
+      "body": "[fact(P, works_at, H), fact(P, privileged, true), fact(H, mfa_enabled, false)]",
+      "joins": ["account_alex", "host_web_01"],
+      "expect": [["account_alex", "access_risk", "require_mfa"]],
+      "note": "people -> cyber. The rule never learns either domain exists; it follows account_alex.works_at."
+    },
+    {
+      "name": "unverified_backup_on_degraded_storage",
+      "head": "fact(X, backup_risk, treat_backup_as_lost)",
+      "body": "[fact(X, verified, false), fact(X, target, T), fact(T, raid_state, degraded)]",
+      "joins": ["backup_nas", "nas_01"],
+      "expect": [["backup_nas", "backup_risk", "treat_backup_as_lost"]],
+      "note": "Two homeserver subjects joined on backup_nas.target."
+    },
+    {
+      "name": "unverified_host_backup",
+      "head": "fact(X, backup_risk, schedule_verified_backup)",
+      "body": "[fact(X, backup_verified, false), fact(X, open_cves, C), C > 0]",
+      "expect": [["host_lab_01", "backup_risk", "schedule_verified_backup"]],
+      "note": "host_db_01's backup is unverified too, but it has nothing to patch."
+    },
+    {
+      "name": "certified_oncall_for_vulnerable_host",
+      "head": "fact(P, oncall_assignment, primary_for_emergency_patch)",
+      "body": "[fact(P, certified, true), fact(P, escalation_tier, 1), fact(P, works_at, H), fact(H, open_cves, C), C > 0]",
+      "joins": ["oncall_alex", "host_web_01"],
+      "expect": [["oncall_alex", "oncall_assignment", "primary_for_emergency_patch"]],
+      "note": "people -> cyber, and it lines up with stale_unpatched_host on the same host."
+    },
+    {
+      "name": "sensor_battery_low",
+      "head": "fact(X, maintenance_action, replace_battery)",
+      "body": "[fact(X, battery_pct, B), B < 20]",
+      "expect": [["sensor_living_room_01", "maintenance_action", "replace_battery"]],
+      "note": "18% on the living-room sensor; the garage one is at 91%."
+    },
+    {
+      "name": "occupied_and_warm",
+      "head": "fact(X, comfort_action, reduce_heating)",
+      "body": "[fact(X, occupancy, true), fact(X, temperature_c, T), T > 26]",
+      "expect": [["sensor_living_room_01", "comfort_action", "reduce_heating"]],
+      "note": "Occupied and 27.4 C."
+    },
+    {
+      "name": "thermostat_overshooting_sensor",
+      "head": "fact(X, comfort_conflict, over_heating)",
+      "body": "[fact(X, mode, heating), fact(X, setpoint_c, S), fact(X, linked_sensor, L), fact(L, temperature_c, T), T > S]",
+      "joins": ["thermostat_hall", "sensor_living_room_01"],
+      "expect": [["thermostat_hall", "comfort_conflict", "over_heating"]],
+      "note": "Two iot subjects: the setpoint is 23.5 and the room reads 27.4."
+    },
+    {
+      "name": "site_over_capacity_on_battery",
+      "head": "fact(S, grid_action, shed_noncritical_load)",
+      "body": "[fact(S, demand_kw, D), fact(S, capacity_kw, C), D > C, fact(S, ups, U), fact(U, on_battery, true)]",
+      "joins": ["site_north", "ups_01"],
+      "expect": [["site_north", "grid_action", "shed_noncritical_load"]],
+      "note": "energy -> homeserver. site_north is over its 80 kW cap and its UPS is discharging. site_south is under cap."
+    },
+    {
+      "name": "ups_discharge_soon",
+      "head": "fact(U, power_action, start_generator)",
+      "body": "[fact(U, on_battery, true), fact(U, battery_pct, B), B < 70]",
+      "expect": [["ups_01", "power_action", "start_generator"]],
+      "note": "62% remaining."
+    },
+    {
+      "name": "cryostat_below_design_temperature",
+      "head": "fact(X, lab_action, hold_for_warmup)",
+      "body": "[fact(X, operating_temp_k, K), K < 4]",
+      "expect": [],
+      "note": "The negative case: cryostat sits at exactly 4 K and the bound is strict, so nothing derives. A rule that fires on everything proves nothing."
+    }
+  ]
+}

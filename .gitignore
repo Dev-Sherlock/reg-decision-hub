@@ -1,0 +1,68 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Model files (large, not committed)
+models/*.gguf
+models/*.bin
+models/*.safetensors
+
+# Database
+*.db
+*.sqlite
+
+# Evaluation outputs
+eval/*_results.json
+eval/report.md
+eval/report.pdf
+
+# Docker
+.docker/
+
+# Node
+ui/node_modules/
+ui/dist/
+ui/build/
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml
+
+# Test artifacts
+.pytest_cache/
+.tox/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp

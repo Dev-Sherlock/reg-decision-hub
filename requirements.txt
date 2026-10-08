@@ -1,0 +1,26 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+asyncpg==0.29.0
+sqlalchemy==2.0.32
+alembic==1.13.1
+# Embedded SWI-Prolog bindings. The distribution is `pyswip`, which exposes
+# pyswip.Prolog — NOT `janus-swi` (a different, unrelated project) and not
+# `janus` (a queue library that happens to share the name).
+pyswip==0.3.3
+httpx==0.27.2
+python-multipart==0.0.9
+pytest==8.3.3
+# 0.25 is the first release that understands asyncio_default_test_loop_scope,
+# which the suite needs to keep the session-scoped engine and the Prolog
+# interpreter on the same event loop as the tests.
+pytest-asyncio>=0.25.0,<0.26.0
+
+# Semantic fact retrieval. torch itself is installed from the CPU-only wheel
+# index in Dockerfile.api so the image stays a sane size.
+# The pin matters: transformers 5.x imports torch.nn in a way torch 2.4.1 does
+# not provide, and sentence-transformers 6.x pulls that in transitively.
+sentence-transformers==3.0.1
+transformers<5.0.0

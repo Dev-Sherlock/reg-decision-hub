@@ -1,0 +1,52 @@
+- generic [ref=f13e3]:
+  - banner [ref=f13e4]:
+    - heading "Universal Symbolic Memory Hub" [level=1] [ref=f13e5]
+    - navigation [ref=f13e6]:
+      - button "Memory" [ref=f13e7] [cursor=pointer]
+      - button "LLM Chat" [ref=f13e8] [cursor=pointer]
+      - button "Decision Tree" [ref=f13e9] [cursor=pointer]
+    - generic [ref=f13e689]:
+      - generic [ref=f13e690]: prolog 2ms
+      - generic [ref=f13e691]: postgresql 10ms
+      - generic [ref=f13e692]: embeddings 132ms
+      - generic [ref=f13e693]: llm 15ms
+  - main [ref=f13e10]:
+    - generic [ref=f13e694]:
+      - generic [ref=f13e695]:
+        - heading "Agent Chat" [level=2] [ref=f13e696]
+        - generic [ref=f13e697]:
+          - text: facts in context
+          - spinbutton "facts in context" [ref=f13e698]: "5"
+      - generic [ref=f13e699]:
+        - generic [ref=f13e705]:
+          - generic [ref=f13e706]: You
+          - generic [ref=f13e707]: Which operator runs the cryostat, and what temperature does it operate at?
+        - generic [ref=f13e709]:
+          - generic [ref=f13e710]: Agent
+          - generic [ref=f13e711]:
+            - generic [ref=f13e712]: Based on the provided facts, we can deduce that the operator running the cryostat is the one who operates the superconducting magnets in the living room of the cryosphere laboratory (CryoLab). Specifically, the fact states that "The operating_temp_k = 4" indicates that this particular operation occurs at a temperature of 27.5 degrees Celsius for all four magnetic fields. So, based on these facts and the given information about the operator running the cryostat, we can conclude that the operator who runs the superconducting magnets in the living room is the one responsible for operating the cryostats within the cryosphere laboratory (CryoLab).
+            - generic [ref=f13e713]:
+              - generic [ref=f13e714]: "5 facts used:"
+              - generic [ref=f13e715]:
+                - generic [ref=f13e716]: cryostat.operator = globex_labs
+                - generic [ref=f13e717]: "0.76"
+                - button "Save" [ref=f13e718] [cursor=pointer]
+              - generic [ref=f13e719]:
+                - generic [ref=f13e720]: cryostat.operating_temp_k = 4
+                - generic [ref=f13e721]: "0.71"
+                - button "Save" [ref=f13e722] [cursor=pointer]
+              - generic [ref=f13e723]:
+                - generic [ref=f13e724]: cryostat.field = superconducting_magnets
+                - generic [ref=f13e725]: "0.50"
+                - button "Save" [ref=f13e726] [cursor=pointer]
+              - generic [ref=f13e727]:
+                - generic [ref=f13e728]: thermostat_hall.setpoint_c = 23.5
+                - generic [ref=f13e729]: "0.42"
+                - button "Save" [ref=f13e730] [cursor=pointer]
+              - generic [ref=f13e731]:
+                - generic [ref=f13e732]: sensor_living_room_01.temperature_c = 27.4
+                - generic [ref=f13e733]: "0.41"
+                - button "Save" [ref=f13e734] [cursor=pointer]
+      - generic [ref=f13e702]:
+        - textbox "Ask about anything in memory..." [ref=f13e703]
+        - button "Send" [disabled] [ref=f13e704]

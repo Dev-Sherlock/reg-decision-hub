@@ -1,0 +1,44 @@
+graph TB
+    subgraph "Docker Compose Stack"
+        UI[React UI<br/>Port 3000]
+        API[FastAPI<br/>Port 8000]
+        PROLOG[SWI-Prolog<br/>Port 4242]
+        LLM[LLM Service<br/>Port 8001]
+        PG[PostgreSQL<br/>Port 5432]
+    end
+
+    UI <-- HTTPS/REST --> API
+    API <-- pyswip --> PROLOG
+    API <-- HTTP --> LLM
+    API <-- asyncpg --> PG
+
+    subgraph "Prolog KB"
+        KB1[node/5 facts]
+        KB2[can_write/2]
+        KB3[trace/2]
+        KB4[decide/3]
+        KB5[eval_condition/2]
+    end
+
+    subgraph "FastAPI Routes"
+        R1[GET /tree]
+        R2[POST /decide]
+        R3[PUT /node/{id}]
+        R4[GET /health]
+        R5[GET /node/{id}/audit]
+    end
+
+    subgraph "LLM Providers"
+        LP1[LlamaCppProvider<br/>local]
+        LP2[OpenRouterProvider<br/>cloud]
+    end
+
+    PROLOG --- KB1 & KB2 & KB3 & KB4 & KB5
+    API --- R1 & R2 & R3 & R4 & R5
+    LLM --- LP1 & LP2
+
+    style UI fill:#e1f5fe
+    style API fill:#f3e5f5
+    style PROLOG fill:#fff3e0
+    style LLM fill:#e8f5e9
+    style PG fill:#fce4ec

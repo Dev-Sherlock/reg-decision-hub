@@ -1,0 +1,10 @@
+name,inputs,expected_leaf,expected_action,expected_owner,expected_domain
+at_north_deiced_only,"{""region"": ""north"", ""ice_on_wing_pct"": 15}",at3,takeoff_denied_deice,safety_officer,air_traffic
+at_north_clean_ice,"{""region"": ""north"", ""ice_on_wing_pct"": 2}",at4,crosswind_check,dispatcher,air_traffic
+at_north_clean_crosswind_high,"{""region"": ""north"", ""ice_on_wing_pct"": 2, ""crosswind_kts"": 30}",at5,takeoff_denied_wind,dispatcher,air_traffic
+at_north_clean_crosswind_low,"{""region"": ""north"", ""ice_on_wing_pct"": 2, ""crosswind_kts"": 10}",at6,takeoff_cleared,dispatcher,air_traffic
+at_north_partial_report,"{""region"": ""north""}",at1,evaluate_icing,safety_officer,air_traffic
+at_south_engine_out,"{""region"": ""south"", ""engine_out"": true}",at7,emergency_return,safety_officer,air_traffic
+at_south_brakes_hot,"{""region"": ""south"", ""brake_temp_c"": 480}",at8,hold_short,dispatcher,air_traffic
+at_south_brakes_normal,"{""region"": ""south"", ""brake_temp_c"": 120}",at9,line_await_clearance,dispatcher,air_traffic
+at_south_no_brake_key,"{""region"": ""south""}",at9,line_await_clearance,dispatcher,air_traffic

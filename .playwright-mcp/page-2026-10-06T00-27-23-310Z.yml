@@ -1,0 +1,82 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - heading "Universal Symbolic Memory Hub" [level=1] [ref=f1e5]
+    - navigation [ref=f1e6]:
+      - button "Memory" [ref=f1e7] [cursor=pointer]
+      - button "LLM Chat" [ref=f1e8] [cursor=pointer]
+      - button "Decision Tree" [active] [ref=f1e9] [cursor=pointer]
+    - generic [ref=f1e697]:
+      - generic [ref=f1e698]: prolog 1ms
+      - generic [ref=f1e699]: postgresql 3ms
+      - generic [ref=f1e700]: embeddings 42ms
+      - generic [ref=f1e701]: llm 4ms
+  - main [ref=f1e10]:
+    - generic [ref=f1e702]:
+      - heading "Decision Tree" [level=2] [ref=f1e704]
+      - generic [ref=f1e705]:
+        - heading "Domain" [level=2] [ref=f1e707]
+        - generic [ref=f1e709]:
+          - combobox "Decision domain" [ref=f1e710]:
+            - option "Air-traffic go/no-go (10 nodes)" [selected]
+            - option "Cyber incident severity (7 nodes)"
+            - option "Energy dispatch (11 nodes)"
+            - option "Manufacturing lot release (9 nodes)"
+          - paragraph [ref=f1e711]: Inputs below are seeded from this domain’s declared keys. The decision itself is routed by the API on the keys you send, not by this selection.
+        - img [ref=f1e713]:
+          - generic [ref=f1e714]:
+            - generic [ref=f1e723] [cursor=pointer]: ROOT
+            - generic [ref=f1e725] [cursor=pointer]:
+              - generic: evaluate_icing
+              - generic: region == north
+            - generic [ref=f1e728] [cursor=pointer]:
+              - generic: standard_procedure
+              - generic: \+ region == north
+            - generic [ref=f1e731] [cursor=pointer]:
+              - generic: takeoff_denied_d...
+              - generic: ice_on_wing_pct > 10
+            - generic [ref=f1e734] [cursor=pointer]:
+              - generic: crosswind_check
+              - generic: ice_on_wing_pct =< 10
+            - generic [ref=f1e737] [cursor=pointer]:
+              - generic: emergency_return
+              - generic: engine_out
+            - generic [ref=f1e740] [cursor=pointer]:
+              - generic: hold_short
+              - generic: \+ engine_out, brake...
+            - generic [ref=f1e743] [cursor=pointer]:
+              - generic: line_await_clear...
+              - generic: \+ engine_out, \+ br...
+            - generic [ref=f1e746] [cursor=pointer]:
+              - generic: takeoff_denied_w...
+              - generic: crosswind_kts > 25
+            - generic [ref=f1e749] [cursor=pointer]:
+              - generic: takeoff_cleared
+              - generic: crosswind_kts =< 25
+        - generic [ref=f1e752]:
+          - heading "Inputs" [level=2] [ref=f1e753]
+          - button "+ Add field" [ref=f1e754] [cursor=pointer]
+        - generic [ref=f1e756]:
+          - generic [ref=f1e757]:
+            - textbox "name" [ref=f1e758]: region
+            - textbox "value" [ref=f1e759]
+            - button "×" [ref=f1e760] [cursor=pointer]
+          - generic [ref=f1e761]:
+            - textbox "name" [ref=f1e762]: ice_on_wing_pct
+            - textbox "value" [ref=f1e763]
+            - button "×" [ref=f1e764] [cursor=pointer]
+          - generic [ref=f1e765]:
+            - textbox "name" [ref=f1e766]: crosswind_kts
+            - textbox "value" [ref=f1e767]
+            - button "×" [ref=f1e768] [cursor=pointer]
+          - generic [ref=f1e769]:
+            - textbox "name" [ref=f1e770]: engine_out
+            - textbox "value" [ref=f1e771]
+            - button "×" [ref=f1e772] [cursor=pointer]
+          - generic [ref=f1e773]:
+            - textbox "name" [ref=f1e774]: brake_temp_c
+            - textbox "value" [ref=f1e775]
+            - button "×" [ref=f1e776] [cursor=pointer]
+          - button "Evaluate Decision" [disabled] [ref=f1e778]
+    - generic [ref=f1e779]:
+      - heading "Decision Result" [level=2] [ref=f1e781]
+      - paragraph [ref=f1e784]: Set some inputs and click "Evaluate Decision" in the left panel.

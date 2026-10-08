@@ -1,0 +1,47 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# swi-prolog-nox  -> embedded SWI-Prolog used through pyswip
+# libpq-dev       -> asyncpg/sqlalchemy build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    libpq-dev \
+    swi-prolog-nox \
+    swi-prolog-core \
+    swi-prolog \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# torch is only needed on CPU here â€” use the small CPU wheel instead of the
+# multi-gigabyte default CUDA build that PyPI would serve.
+RUN pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu \
+        "torch==2.4.1"
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY src/ /app/src/
+COPY kb/ /kb/
+# The sample-data loader lives here, and the test suite imports it to check the
+# dataset and the loader's own validation.
+COPY scripts/ /app/scripts/
+# pytest.ini lives at the project root, which is not bind-mounted, so it has to
+# be baked in — without it asyncio_mode=auto is off and every async test is
+# silently skipped rather than failed.
+COPY pytest.ini /app/pytest.ini
+
+ENV PYTHONPATH=/app
+ENV HF_HOME=/cache/huggingface
+ENV KB_PATH=/kb/symbolic_memory.pl
+ENV DECISION_TREE_PATH=/kb/decision_tree.pl
+# kb/symbolic_memory.pl stamps provenance entries as UTC ISO-8601 with a 'Z'
+# suffix, which is only correct if the container itself runs in UTC.
+ENV TZ=UTC
+
+EXPOSE 8000
+
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

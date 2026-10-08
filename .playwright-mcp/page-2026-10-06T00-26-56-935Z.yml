@@ -1,0 +1,700 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - heading "Universal Symbolic Memory Hub" [level=1] [ref=f1e5]
+    - navigation [ref=f1e6]:
+      - button "Memory" [ref=f1e7] [cursor=pointer]
+      - button "LLM Chat" [ref=f1e8] [cursor=pointer]
+      - button "Decision Tree" [ref=f1e9] [cursor=pointer]
+  - main [ref=f1e10]:
+    - generic [ref=f1e11]:
+      - generic [ref=f1e12]:
+        - heading "Symbolic Memory" [level=2] [ref=f1e13]
+        - generic [ref=f1e14]:
+          - button "Facts" [ref=f1e15] [cursor=pointer]
+          - button "Rules" [ref=f1e16] [cursor=pointer]
+          - button "Search" [ref=f1e17] [cursor=pointer]
+      - generic [ref=f1e18]:
+        - generic [ref=f1e19]:
+          - generic [ref=f1e20]:
+            - text: Subject
+            - textbox "Subject" [ref=f1e21]:
+              - /placeholder: "* for any"
+              - text: "*"
+          - generic [ref=f1e22]:
+            - text: Predicate
+            - textbox "Predicate" [ref=f1e23]:
+              - /placeholder: "* for any"
+              - text: "*"
+          - button "Apply" [ref=f1e24] [cursor=pointer]
+        - generic [ref=f1e25]:
+          - textbox "subject" [ref=f1e26]
+          - textbox "predicate" [ref=f1e27]
+          - textbox "value (22, \"Acme Corp\", [a, b])" [ref=f1e28]
+          - textbox "owner (optional)" [ref=f1e29]
+          - button "Store fact" [ref=f1e30] [cursor=pointer]
+        - table [ref=f1e31]:
+          - rowgroup [ref=f1e32]:
+            - row [ref=f1e33]:
+              - columnheader "Subject" [ref=f1e34]
+              - columnheader "Predicate" [ref=f1e35]
+              - columnheader "Value" [ref=f1e36]
+              - columnheader "v" [ref=f1e37]
+              - columnheader "Updated" [ref=f1e38]
+              - columnheader [ref=f1e39]
+          - rowgroup [ref=f1e40]:
+            - row [ref=f1e41]:
+              - cell "account_alex" [ref=f1e42]
+              - cell "access_risk" [ref=f1e43]
+              - cell "require_mfa" [ref=f1e44]
+              - cell "3" [ref=f1e45]
+              - cell "2026-10-04T22:37:44" [ref=f1e46]
+              - cell [ref=f1e47]:
+                - button "Delete" [ref=f1e48] [cursor=pointer]
+            - row [ref=f1e49]:
+              - cell "account_alex" [ref=f1e50]
+              - cell "privileged" [ref=f1e51]
+              - cell "true" [ref=f1e52]
+              - cell "1" [ref=f1e53]
+              - cell "2026-10-05T02:12:30" [ref=f1e54]
+              - cell [ref=f1e55]:
+                - button "Delete" [ref=f1e56] [cursor=pointer]
+            - row [ref=f1e57]:
+              - cell "account_alex" [ref=f1e58]
+              - cell "role" [ref=f1e59]
+              - cell "site_reliability_engineer" [ref=f1e60]
+              - cell "1" [ref=f1e61]
+              - cell "2026-10-05T02:12:30" [ref=f1e62]
+              - cell [ref=f1e63]:
+                - button "Delete" [ref=f1e64] [cursor=pointer]
+            - row [ref=f1e65]:
+              - cell "account_alex" [ref=f1e66]
+              - cell "works_at" [ref=f1e67]
+              - cell "host_web_01" [ref=f1e68]
+              - cell "1" [ref=f1e69]
+              - cell "2026-10-05T02:12:30" [ref=f1e70]
+              - cell [ref=f1e71]:
+                - button "Delete" [ref=f1e72] [cursor=pointer]
+            - row [ref=f1e73]:
+              - cell "backup_nas" [ref=f1e74]
+              - cell "last_backup" [ref=f1e75]
+              - cell "2026-10-02" [ref=f1e76]
+              - cell "1" [ref=f1e77]
+              - cell "2026-10-05T02:12:26" [ref=f1e78]
+              - cell [ref=f1e79]:
+                - button "Delete" [ref=f1e80] [cursor=pointer]
+            - row [ref=f1e81]:
+              - cell "backup_nas" [ref=f1e82]
+              - cell "target" [ref=f1e83]
+              - cell "nas_01" [ref=f1e84]
+              - cell "1" [ref=f1e85]
+              - cell "2026-10-05T02:12:26" [ref=f1e86]
+              - cell [ref=f1e87]:
+                - button "Delete" [ref=f1e88] [cursor=pointer]
+            - row [ref=f1e89]:
+              - cell "backup_nas" [ref=f1e90]
+              - cell "verified" [ref=f1e91]
+              - cell "false" [ref=f1e92]
+              - cell "1" [ref=f1e93]
+              - cell "2026-10-05T02:12:26" [ref=f1e94]
+              - cell [ref=f1e95]:
+                - button "Delete" [ref=f1e96] [cursor=pointer]
+            - row [ref=f1e97]:
+              - cell "cryostat" [ref=f1e98]
+              - cell "field" [ref=f1e99]
+              - cell "superconducting_magnets" [ref=f1e100]
+              - cell "7" [ref=f1e101]
+              - cell "2026-10-05T21:36:31" [ref=f1e102]
+              - cell [ref=f1e103]:
+                - button "Delete" [ref=f1e104] [cursor=pointer]
+            - row [ref=f1e105]:
+              - cell "cryostat" [ref=f1e106]
+              - cell "operating_temp_k" [ref=f1e107]
+              - cell "4" [ref=f1e108]
+              - cell "7" [ref=f1e109]
+              - cell "2026-10-05T21:36:32" [ref=f1e110]
+              - cell [ref=f1e111]:
+                - button "Delete" [ref=f1e112] [cursor=pointer]
+            - row [ref=f1e113]:
+              - cell "cryostat" [ref=f1e114]
+              - cell "operator" [ref=f1e115]
+              - cell "globex_labs" [ref=f1e116]
+              - cell "7" [ref=f1e117]
+              - cell "2026-10-05T21:36:31" [ref=f1e118]
+              - cell [ref=f1e119]:
+                - button "Delete" [ref=f1e120] [cursor=pointer]
+            - row [ref=f1e121]:
+              - cell "eval_degradation_probe" [ref=f1e122]
+              - cell "status" [ref=f1e123]
+              - cell "writable_without_llm" [ref=f1e124]
+              - cell "20" [ref=f1e125]
+              - cell "2026-10-05T21:37:11" [ref=f1e126]
+              - cell [ref=f1e127]:
+                - button "Delete" [ref=f1e128] [cursor=pointer]
+            - row [ref=f1e129]:
+              - cell "eval_governance_probe" [ref=f1e130]
+              - cell "policy" [ref=f1e131]
+              - cell "amended" [ref=f1e132]
+              - cell "52" [ref=f1e133]
+              - cell "2026-10-05T21:36:24" [ref=f1e134]
+              - cell [ref=f1e135]:
+                - button "Delete" [ref=f1e136] [cursor=pointer]
+            - row [ref=f1e137]:
+              - cell "flux_cap" [ref=f1e138]
+              - cell "critical_field_tesla" [ref=f1e139]
+              - cell "22" [ref=f1e140]
+              - cell "7" [ref=f1e141]
+              - cell "2026-10-05T21:36:31" [ref=f1e142]
+              - cell [ref=f1e143]:
+                - button "Delete" [ref=f1e144] [cursor=pointer]
+            - row [ref=f1e145]:
+              - cell "flux_cap" [ref=f1e146]
+              - cell "field" [ref=f1e147]
+              - cell "material_science" [ref=f1e148]
+              - cell "7" [ref=f1e149]
+              - cell "2026-10-05T21:36:31" [ref=f1e150]
+              - cell [ref=f1e151]:
+                - button "Delete" [ref=f1e152] [cursor=pointer]
+            - row [ref=f1e153]:
+              - cell "flux_cap" [ref=f1e154]
+              - cell "operator" [ref=f1e155]
+              - cell "acme_energy" [ref=f1e156]
+              - cell "7" [ref=f1e157]
+              - cell "2026-10-05T21:36:31" [ref=f1e158]
+              - cell [ref=f1e159]:
+                - button "Delete" [ref=f1e160] [cursor=pointer]
+            - row [ref=f1e161]:
+              - cell "heliostat" [ref=f1e162]
+              - cell "aperture_m2" [ref=f1e163]
+              - cell "1200" [ref=f1e164]
+              - cell "7" [ref=f1e165]
+              - cell "2026-10-05T21:36:31" [ref=f1e166]
+              - cell [ref=f1e167]:
+                - button "Delete" [ref=f1e168] [cursor=pointer]
+            - row [ref=f1e169]:
+              - cell "heliostat" [ref=f1e170]
+              - cell "field" [ref=f1e171]
+              - cell "solar_thermal" [ref=f1e172]
+              - cell "7" [ref=f1e173]
+              - cell "2026-10-05T21:36:31" [ref=f1e174]
+              - cell [ref=f1e175]:
+                - button "Delete" [ref=f1e176] [cursor=pointer]
+            - row [ref=f1e177]:
+              - cell "heliostat" [ref=f1e178]
+              - cell "operator" [ref=f1e179]
+              - cell "acme_energy" [ref=f1e180]
+              - cell "7" [ref=f1e181]
+              - cell "2026-10-05T21:36:31" [ref=f1e182]
+              - cell [ref=f1e183]:
+                - button "Delete" [ref=f1e184] [cursor=pointer]
+            - row [ref=f1e185]:
+              - cell "host_db_01" [ref=f1e186]
+              - cell "backup_verified" [ref=f1e187]
+              - cell "false" [ref=f1e188]
+              - cell "1" [ref=f1e189]
+              - cell "2026-10-05T02:12:28" [ref=f1e190]
+              - cell [ref=f1e191]:
+                - button "Delete" [ref=f1e192] [cursor=pointer]
+            - row [ref=f1e193]:
+              - cell "host_db_01" [ref=f1e194]
+              - cell "encryption_enabled" [ref=f1e195]
+              - cell "true" [ref=f1e196]
+              - cell "1" [ref=f1e197]
+              - cell "2026-10-05T02:12:28" [ref=f1e198]
+              - cell [ref=f1e199]:
+                - button "Delete" [ref=f1e200] [cursor=pointer]
+            - row [ref=f1e201]:
+              - cell "host_db_01" [ref=f1e202]
+              - cell "mfa_enabled" [ref=f1e203]
+              - cell "true" [ref=f1e204]
+              - cell "1" [ref=f1e205]
+              - cell "2026-10-05T02:12:28" [ref=f1e206]
+              - cell [ref=f1e207]:
+                - button "Delete" [ref=f1e208] [cursor=pointer]
+            - row [ref=f1e209]:
+              - cell "host_db_01" [ref=f1e210]
+              - cell "open_cves" [ref=f1e211]
+              - cell "0" [ref=f1e212]
+              - cell "1" [ref=f1e213]
+              - cell "2026-10-05T02:12:28" [ref=f1e214]
+              - cell [ref=f1e215]:
+                - button "Delete" [ref=f1e216] [cursor=pointer]
+            - row [ref=f1e217]:
+              - cell "host_db_01" [ref=f1e218]
+              - cell "patch_age_days" [ref=f1e219]
+              - cell "5" [ref=f1e220]
+              - cell "1" [ref=f1e221]
+              - cell "2026-10-05T02:12:28" [ref=f1e222]
+              - cell [ref=f1e223]:
+                - button "Delete" [ref=f1e224] [cursor=pointer]
+            - row [ref=f1e225]:
+              - cell "host_db_01" [ref=f1e226]
+              - cell "role" [ref=f1e227]
+              - cell "database_server" [ref=f1e228]
+              - cell "1" [ref=f1e229]
+              - cell "2026-10-05T02:12:27" [ref=f1e230]
+              - cell [ref=f1e231]:
+                - button "Delete" [ref=f1e232] [cursor=pointer]
+            - row [ref=f1e233]:
+              - cell "host_lab_01" [ref=f1e234]
+              - cell "backup_verified" [ref=f1e235]
+              - cell "false" [ref=f1e236]
+              - cell "1" [ref=f1e237]
+              - cell "2026-10-05T02:12:28" [ref=f1e238]
+              - cell [ref=f1e239]:
+                - button "Delete" [ref=f1e240] [cursor=pointer]
+            - row [ref=f1e241]:
+              - cell "host_lab_01" [ref=f1e242]
+              - cell "encryption_enabled" [ref=f1e243]
+              - cell "false" [ref=f1e244]
+              - cell "1" [ref=f1e245]
+              - cell "2026-10-05T02:12:28" [ref=f1e246]
+              - cell [ref=f1e247]:
+                - button "Delete" [ref=f1e248] [cursor=pointer]
+            - row [ref=f1e249]:
+              - cell "host_lab_01" [ref=f1e250]
+              - cell "mfa_enabled" [ref=f1e251]
+              - cell "false" [ref=f1e252]
+              - cell "1" [ref=f1e253]
+              - cell "2026-10-05T02:12:28" [ref=f1e254]
+              - cell [ref=f1e255]:
+                - button "Delete" [ref=f1e256] [cursor=pointer]
+            - row [ref=f1e257]:
+              - cell "host_lab_01" [ref=f1e258]
+              - cell "open_cves" [ref=f1e259]
+              - cell "1" [ref=f1e260]
+              - cell "1" [ref=f1e261]
+              - cell "2026-10-05T02:12:28" [ref=f1e262]
+              - cell [ref=f1e263]:
+                - button "Delete" [ref=f1e264] [cursor=pointer]
+            - row [ref=f1e265]:
+              - cell "host_lab_01" [ref=f1e266]
+              - cell "patch_age_days" [ref=f1e267]
+              - cell "61" [ref=f1e268]
+              - cell "1" [ref=f1e269]
+              - cell "2026-10-05T02:12:28" [ref=f1e270]
+              - cell [ref=f1e271]:
+                - button "Delete" [ref=f1e272] [cursor=pointer]
+            - row [ref=f1e273]:
+              - cell "host_lab_01" [ref=f1e274]
+              - cell "role" [ref=f1e275]
+              - cell "instrument_controller" [ref=f1e276]
+              - cell "1" [ref=f1e277]
+              - cell "2026-10-05T02:12:28" [ref=f1e278]
+              - cell [ref=f1e279]:
+                - button "Delete" [ref=f1e280] [cursor=pointer]
+            - row [ref=f1e281]:
+              - cell "host_lab_01" [ref=f1e282]
+              - cell "services" [ref=f1e283]
+              - cell "[\"ssh\"]" [ref=f1e284]
+              - cell "1" [ref=f1e285]
+              - cell "2026-10-05T02:12:28" [ref=f1e286]
+              - cell [ref=f1e287]:
+                - button "Delete" [ref=f1e288] [cursor=pointer]
+            - row [ref=f1e289]:
+              - cell "host_web_01" [ref=f1e290]
+              - cell "backup_verified" [ref=f1e291]
+              - cell "true" [ref=f1e292]
+              - cell "1" [ref=f1e293]
+              - cell "2026-10-05T02:12:27" [ref=f1e294]
+              - cell [ref=f1e295]:
+                - button "Delete" [ref=f1e296] [cursor=pointer]
+            - row [ref=f1e297]:
+              - cell "host_web_01" [ref=f1e298]
+              - cell "encryption_enabled" [ref=f1e299]
+              - cell "true" [ref=f1e300]
+              - cell "1" [ref=f1e301]
+              - cell "2026-10-05T02:12:27" [ref=f1e302]
+              - cell [ref=f1e303]:
+                - button "Delete" [ref=f1e304] [cursor=pointer]
+            - row [ref=f1e305]:
+              - cell "host_web_01" [ref=f1e306]
+              - cell "mfa_enabled" [ref=f1e307]
+              - cell "false" [ref=f1e308]
+              - cell "1" [ref=f1e309]
+              - cell "2026-10-05T02:12:27" [ref=f1e310]
+              - cell [ref=f1e311]:
+                - button "Delete" [ref=f1e312] [cursor=pointer]
+            - row [ref=f1e313]:
+              - cell "host_web_01" [ref=f1e314]
+              - cell "open_cves" [ref=f1e315]
+              - cell "3" [ref=f1e316]
+              - cell "1" [ref=f1e317]
+              - cell "2026-10-05T02:12:27" [ref=f1e318]
+              - cell [ref=f1e319]:
+                - button "Delete" [ref=f1e320] [cursor=pointer]
+            - row [ref=f1e321]:
+              - cell "host_web_01" [ref=f1e322]
+              - cell "patch_age_days" [ref=f1e323]
+              - cell "47" [ref=f1e324]
+              - cell "1" [ref=f1e325]
+              - cell "2026-10-05T02:12:27" [ref=f1e326]
+              - cell [ref=f1e327]:
+                - button "Delete" [ref=f1e328] [cursor=pointer]
+            - row [ref=f1e329]:
+              - cell "host_web_01" [ref=f1e330]
+              - cell "role" [ref=f1e331]
+              - cell "public_web_server" [ref=f1e332]
+              - cell "1" [ref=f1e333]
+              - cell "2026-10-05T02:12:27" [ref=f1e334]
+              - cell [ref=f1e335]:
+                - button "Delete" [ref=f1e336] [cursor=pointer]
+            - row [ref=f1e337]:
+              - cell "host_web_01" [ref=f1e338]
+              - cell "services" [ref=f1e339]
+              - cell "[\"http\",\"ssh\"]" [ref=f1e340]
+              - cell "1" [ref=f1e341]
+              - cell "2026-10-05T02:12:27" [ref=f1e342]
+              - cell [ref=f1e343]:
+                - button "Delete" [ref=f1e344] [cursor=pointer]
+            - row [ref=f1e345]:
+              - cell "nas_01" [ref=f1e346]
+              - cell "disk_count" [ref=f1e347]
+              - cell "8" [ref=f1e348]
+              - cell "1" [ref=f1e349]
+              - cell "2026-10-05T02:12:25" [ref=f1e350]
+              - cell [ref=f1e351]:
+                - button "Delete" [ref=f1e352] [cursor=pointer]
+            - row [ref=f1e353]:
+              - cell "nas_01" [ref=f1e354]
+              - cell "disk_health_pct" [ref=f1e355]
+              - cell "64" [ref=f1e356]
+              - cell "1" [ref=f1e357]
+              - cell "2026-10-05T02:12:25" [ref=f1e358]
+              - cell [ref=f1e359]:
+                - button "Delete" [ref=f1e360] [cursor=pointer]
+            - row [ref=f1e361]:
+              - cell "nas_01" [ref=f1e362]
+              - cell "raid_state" [ref=f1e363]
+              - cell "degraded" [ref=f1e364]
+              - cell "1" [ref=f1e365]
+              - cell "2026-10-05T02:12:25" [ref=f1e366]
+              - cell [ref=f1e367]:
+                - button "Delete" [ref=f1e368] [cursor=pointer]
+            - row [ref=f1e369]:
+              - cell "nas_01" [ref=f1e370]
+              - cell "role" [ref=f1e371]
+              - cell "network_attached_storage" [ref=f1e372]
+              - cell "1" [ref=f1e373]
+              - cell "2026-10-05T02:12:25" [ref=f1e374]
+              - cell [ref=f1e375]:
+                - button "Delete" [ref=f1e376] [cursor=pointer]
+            - row [ref=f1e377]:
+              - cell "nas_01" [ref=f1e378]
+              - cell "services" [ref=f1e379]
+              - cell "[\"smb\",\"nfs\",\"ssh\"]" [ref=f1e380]
+              - cell "1" [ref=f1e381]
+              - cell "2026-10-05T02:12:25" [ref=f1e382]
+              - cell [ref=f1e383]:
+                - button "Delete" [ref=f1e384] [cursor=pointer]
+            - row [ref=f1e385]:
+              - cell "nas_01" [ref=f1e386]
+              - cell "temperature_c" [ref=f1e387]
+              - cell "38" [ref=f1e388]
+              - cell "1" [ref=f1e389]
+              - cell "2026-10-05T02:12:25" [ref=f1e390]
+              - cell [ref=f1e391]:
+                - button "Delete" [ref=f1e392] [cursor=pointer]
+            - row [ref=f1e393]:
+              - cell "nas_01" [ref=f1e394]
+              - cell "uptime_days" [ref=f1e395]
+              - cell "412" [ref=f1e396]
+              - cell "1" [ref=f1e397]
+              - cell "2026-10-05T02:12:25" [ref=f1e398]
+              - cell [ref=f1e399]:
+                - button "Delete" [ref=f1e400] [cursor=pointer]
+            - row [ref=f1e401]:
+              - cell "nas_01" [ref=f1e402]
+              - cell "warranty_expires" [ref=f1e403]
+              - cell "2027-03-01" [ref=f1e404]
+              - cell "1" [ref=f1e405]
+              - cell "2026-10-05T02:12:25" [ref=f1e406]
+              - cell [ref=f1e407]:
+                - button "Delete" [ref=f1e408] [cursor=pointer]
+            - row [ref=f1e409]:
+              - cell "oncall_alex" [ref=f1e410]
+              - cell "certified" [ref=f1e411]
+              - cell "true" [ref=f1e412]
+              - cell "1" [ref=f1e413]
+              - cell "2026-10-05T02:12:30" [ref=f1e414]
+              - cell [ref=f1e415]:
+                - button "Delete" [ref=f1e416] [cursor=pointer]
+            - row [ref=f1e417]:
+              - cell "oncall_alex" [ref=f1e418]
+              - cell "escalation_tier" [ref=f1e419]
+              - cell "1" [ref=f1e420]
+              - cell "1" [ref=f1e421]
+              - cell "2026-10-05T02:12:30" [ref=f1e422]
+              - cell [ref=f1e423]:
+                - button "Delete" [ref=f1e424] [cursor=pointer]
+            - row [ref=f1e425]:
+              - cell "oncall_alex" [ref=f1e426]
+              - cell "phone" [ref=f1e427]
+              - cell "+1-555-0142" [ref=f1e428]
+              - cell "1" [ref=f1e429]
+              - cell "2026-10-05T02:12:30" [ref=f1e430]
+              - cell [ref=f1e431]:
+                - button "Delete" [ref=f1e432] [cursor=pointer]
+            - row [ref=f1e433]:
+              - cell "oncall_alex" [ref=f1e434]
+              - cell "works_at" [ref=f1e435]
+              - cell "host_web_01" [ref=f1e436]
+              - cell "1" [ref=f1e437]
+              - cell "2026-10-05T02:12:30" [ref=f1e438]
+              - cell [ref=f1e439]:
+                - button "Delete" [ref=f1e440] [cursor=pointer]
+            - row [ref=f1e441]:
+              - cell "oncall_robin" [ref=f1e442]
+              - cell "certified" [ref=f1e443]
+              - cell "false" [ref=f1e444]
+              - cell "1" [ref=f1e445]
+              - cell "2026-10-05T02:12:30" [ref=f1e446]
+              - cell [ref=f1e447]:
+                - button "Delete" [ref=f1e448] [cursor=pointer]
+            - row [ref=f1e449]:
+              - cell "oncall_robin" [ref=f1e450]
+              - cell "escalation_tier" [ref=f1e451]
+              - cell "2" [ref=f1e452]
+              - cell "1" [ref=f1e453]
+              - cell "2026-10-05T02:12:30" [ref=f1e454]
+              - cell [ref=f1e455]:
+                - button "Delete" [ref=f1e456] [cursor=pointer]
+            - row [ref=f1e457]:
+              - cell "oncall_robin" [ref=f1e458]
+              - cell "phone" [ref=f1e459]
+              - cell "+1-555-0199" [ref=f1e460]
+              - cell "1" [ref=f1e461]
+              - cell "2026-10-05T02:12:31" [ref=f1e462]
+              - cell [ref=f1e463]:
+                - button "Delete" [ref=f1e464] [cursor=pointer]
+            - row [ref=f1e465]:
+              - cell "sensor_garage_01" [ref=f1e466]
+              - cell "battery_pct" [ref=f1e467]
+              - cell "91" [ref=f1e468]
+              - cell "1" [ref=f1e469]
+              - cell "2026-10-05T02:12:27" [ref=f1e470]
+              - cell [ref=f1e471]:
+                - button "Delete" [ref=f1e472] [cursor=pointer]
+            - row [ref=f1e473]:
+              - cell "sensor_garage_01" [ref=f1e474]
+              - cell "firmware" [ref=f1e475]
+              - cell "2.4.1" [ref=f1e476]
+              - cell "1" [ref=f1e477]
+              - cell "2026-10-05T02:12:27" [ref=f1e478]
+              - cell [ref=f1e479]:
+                - button "Delete" [ref=f1e480] [cursor=pointer]
+            - row [ref=f1e481]:
+              - cell "sensor_garage_01" [ref=f1e482]
+              - cell "humidity_pct" [ref=f1e483]
+              - cell "44" [ref=f1e484]
+              - cell "1" [ref=f1e485]
+              - cell "2026-10-05T02:12:26" [ref=f1e486]
+              - cell [ref=f1e487]:
+                - button "Delete" [ref=f1e488] [cursor=pointer]
+            - row [ref=f1e489]:
+              - cell "sensor_garage_01" [ref=f1e490]
+              - cell "occupancy" [ref=f1e491]
+              - cell "false" [ref=f1e492]
+              - cell "1" [ref=f1e493]
+              - cell "2026-10-05T02:12:26" [ref=f1e494]
+              - cell [ref=f1e495]:
+                - button "Delete" [ref=f1e496] [cursor=pointer]
+            - row [ref=f1e497]:
+              - cell "sensor_garage_01" [ref=f1e498]
+              - cell "temperature_c" [ref=f1e499]
+              - cell "11.2" [ref=f1e500]
+              - cell "1" [ref=f1e501]
+              - cell "2026-10-05T02:12:26" [ref=f1e502]
+              - cell [ref=f1e503]:
+                - button "Delete" [ref=f1e504] [cursor=pointer]
+            - row [ref=f1e505]:
+              - cell "sensor_living_room_01" [ref=f1e506]
+              - cell "battery_pct" [ref=f1e507]
+              - cell "18" [ref=f1e508]
+              - cell "1" [ref=f1e509]
+              - cell "2026-10-05T02:12:26" [ref=f1e510]
+              - cell [ref=f1e511]:
+                - button "Delete" [ref=f1e512] [cursor=pointer]
+            - row [ref=f1e513]:
+              - cell "sensor_living_room_01" [ref=f1e514]
+              - cell "firmware" [ref=f1e515]
+              - cell "2.4.1" [ref=f1e516]
+              - cell "1" [ref=f1e517]
+              - cell "2026-10-05T02:12:26" [ref=f1e518]
+              - cell [ref=f1e519]:
+                - button "Delete" [ref=f1e520] [cursor=pointer]
+            - row [ref=f1e521]:
+              - cell "sensor_living_room_01" [ref=f1e522]
+              - cell "humidity_pct" [ref=f1e523]
+              - cell "61" [ref=f1e524]
+              - cell "1" [ref=f1e525]
+              - cell "2026-10-05T02:12:26" [ref=f1e526]
+              - cell [ref=f1e527]:
+                - button "Delete" [ref=f1e528] [cursor=pointer]
+            - row [ref=f1e529]:
+              - cell "sensor_living_room_01" [ref=f1e530]
+              - cell "occupancy" [ref=f1e531]
+              - cell "true" [ref=f1e532]
+              - cell "1" [ref=f1e533]
+              - cell "2026-10-05T02:12:26" [ref=f1e534]
+              - cell [ref=f1e535]:
+                - button "Delete" [ref=f1e536] [cursor=pointer]
+            - row [ref=f1e537]:
+              - cell "sensor_living_room_01" [ref=f1e538]
+              - cell "temperature_c" [ref=f1e539]
+              - cell "27.4" [ref=f1e540]
+              - cell "1" [ref=f1e541]
+              - cell "2026-10-05T02:12:26" [ref=f1e542]
+              - cell [ref=f1e543]:
+                - button "Delete" [ref=f1e544] [cursor=pointer]
+            - row [ref=f1e545]:
+              - cell "site_north" [ref=f1e546]
+              - cell "capacity_kw" [ref=f1e547]
+              - cell "80" [ref=f1e548]
+              - cell "1" [ref=f1e549]
+              - cell "2026-10-05T02:12:28" [ref=f1e550]
+              - cell [ref=f1e551]:
+                - button "Delete" [ref=f1e552] [cursor=pointer]
+            - row [ref=f1e553]:
+              - cell "site_north" [ref=f1e554]
+              - cell "demand_kw" [ref=f1e555]
+              - cell "92" [ref=f1e556]
+              - cell "1" [ref=f1e557]
+              - cell "2026-10-05T02:12:28" [ref=f1e558]
+              - cell [ref=f1e559]:
+                - button "Delete" [ref=f1e560] [cursor=pointer]
+            - row [ref=f1e561]:
+              - cell "site_north" [ref=f1e562]
+              - cell "humidity_pct" [ref=f1e563]
+              - cell "74" [ref=f1e564]
+              - cell "1" [ref=f1e565]
+              - cell "2026-10-05T02:12:29" [ref=f1e566]
+              - cell [ref=f1e567]:
+                - button "Delete" [ref=f1e568] [cursor=pointer]
+            - row [ref=f1e569]:
+              - cell "site_north" [ref=f1e570]
+              - cell "tariff" [ref=f1e571]
+              - cell "peak" [ref=f1e572]
+              - cell "1" [ref=f1e573]
+              - cell "2026-10-05T02:12:29" [ref=f1e574]
+              - cell [ref=f1e575]:
+                - button "Delete" [ref=f1e576] [cursor=pointer]
+            - row [ref=f1e577]:
+              - cell "site_north" [ref=f1e578]
+              - cell "temperature_c" [ref=f1e579]
+              - cell "34" [ref=f1e580]
+              - cell "1" [ref=f1e581]
+              - cell "2026-10-05T02:12:29" [ref=f1e582]
+              - cell [ref=f1e583]:
+                - button "Delete" [ref=f1e584] [cursor=pointer]
+            - row [ref=f1e585]:
+              - cell "site_north" [ref=f1e586]
+              - cell "ups" [ref=f1e587]
+              - cell "ups_01" [ref=f1e588]
+              - cell "1" [ref=f1e589]
+              - cell "2026-10-05T02:12:29" [ref=f1e590]
+              - cell [ref=f1e591]:
+                - button "Delete" [ref=f1e592] [cursor=pointer]
+            - row [ref=f1e593]:
+              - cell "site_south" [ref=f1e594]
+              - cell "capacity_kw" [ref=f1e595]
+              - cell "80" [ref=f1e596]
+              - cell "1" [ref=f1e597]
+              - cell "2026-10-05T02:12:29" [ref=f1e598]
+              - cell [ref=f1e599]:
+                - button "Delete" [ref=f1e600] [cursor=pointer]
+            - row [ref=f1e601]:
+              - cell "site_south" [ref=f1e602]
+              - cell "demand_kw" [ref=f1e603]
+              - cell "61" [ref=f1e604]
+              - cell "1" [ref=f1e605]
+              - cell "2026-10-05T02:12:29" [ref=f1e606]
+              - cell [ref=f1e607]:
+                - button "Delete" [ref=f1e608] [cursor=pointer]
+            - row [ref=f1e609]:
+              - cell "site_south" [ref=f1e610]
+              - cell "humidity_pct" [ref=f1e611]
+              - cell "48" [ref=f1e612]
+              - cell "1" [ref=f1e613]
+              - cell "2026-10-05T02:12:29" [ref=f1e614]
+              - cell [ref=f1e615]:
+                - button "Delete" [ref=f1e616] [cursor=pointer]
+            - row [ref=f1e617]:
+              - cell "site_south" [ref=f1e618]
+              - cell "tariff" [ref=f1e619]
+              - cell "offpeak" [ref=f1e620]
+              - cell "1" [ref=f1e621]
+              - cell "2026-10-05T02:12:29" [ref=f1e622]
+              - cell [ref=f1e623]:
+                - button "Delete" [ref=f1e624] [cursor=pointer]
+            - row [ref=f1e625]:
+              - cell "site_south" [ref=f1e626]
+              - cell "temperature_c" [ref=f1e627]
+              - cell "22" [ref=f1e628]
+              - cell "1" [ref=f1e629]
+              - cell "2026-10-05T02:12:29" [ref=f1e630]
+              - cell [ref=f1e631]:
+                - button "Delete" [ref=f1e632] [cursor=pointer]
+            - row [ref=f1e633]:
+              - cell "site_south" [ref=f1e634]
+              - cell "ups" [ref=f1e635]
+              - cell "ups_01" [ref=f1e636]
+              - cell "1" [ref=f1e637]
+              - cell "2026-10-05T02:12:29" [ref=f1e638]
+              - cell [ref=f1e639]:
+                - button "Delete" [ref=f1e640] [cursor=pointer]
+            - row [ref=f1e641]:
+              - cell "thermostat_hall" [ref=f1e642]
+              - cell "linked_sensor" [ref=f1e643]
+              - cell "sensor_living_room_01" [ref=f1e644]
+              - cell "1" [ref=f1e645]
+              - cell "2026-10-05T02:12:27" [ref=f1e646]
+              - cell [ref=f1e647]:
+                - button "Delete" [ref=f1e648] [cursor=pointer]
+            - row [ref=f1e649]:
+              - cell "thermostat_hall" [ref=f1e650]
+              - cell "mode" [ref=f1e651]
+              - cell "heating" [ref=f1e652]
+              - cell "1" [ref=f1e653]
+              - cell "2026-10-05T02:12:27" [ref=f1e654]
+              - cell [ref=f1e655]:
+                - button "Delete" [ref=f1e656] [cursor=pointer]
+            - row [ref=f1e657]:
+              - cell "thermostat_hall" [ref=f1e658]
+              - cell "setpoint_c" [ref=f1e659]
+              - cell "23.5" [ref=f1e660]
+              - cell "1" [ref=f1e661]
+              - cell "2026-10-05T02:12:27" [ref=f1e662]
+              - cell [ref=f1e663]:
+                - button "Delete" [ref=f1e664] [cursor=pointer]
+            - row [ref=f1e665]:
+              - cell "ups_01" [ref=f1e666]
+              - cell "battery_pct" [ref=f1e667]
+              - cell "62" [ref=f1e668]
+              - cell "1" [ref=f1e669]
+              - cell "2026-10-05T02:12:25" [ref=f1e670]
+              - cell [ref=f1e671]:
+                - button "Delete" [ref=f1e672] [cursor=pointer]
+            - row [ref=f1e673]:
+              - cell "ups_01" [ref=f1e674]
+              - cell "input_voltage" [ref=f1e675]
+              - cell "228" [ref=f1e676]
+              - cell "1" [ref=f1e677]
+              - cell "2026-10-05T02:12:26" [ref=f1e678]
+              - cell [ref=f1e679]:
+                - button "Delete" [ref=f1e680] [cursor=pointer]
+            - row [ref=f1e681]:
+              - cell "ups_01" [ref=f1e682]
+              - cell "on_battery" [ref=f1e683]
+              - cell "true" [ref=f1e684]
+              - cell "1" [ref=f1e685]
+              - cell "2026-10-05T02:12:26" [ref=f1e686]
+              - cell [ref=f1e687]:
+                - button "Delete" [ref=f1e688] [cursor=pointer]
+            - row [ref=f1e689]:
+              - cell "ups_01" [ref=f1e690]
+              - cell "runtime_minutes" [ref=f1e691]
+              - cell "11" [ref=f1e692]
+              - cell "1" [ref=f1e693]
+              - cell "2026-10-05T02:12:26" [ref=f1e694]
+              - cell [ref=f1e695]:
+                - button "Delete" [ref=f1e696] [cursor=pointer]

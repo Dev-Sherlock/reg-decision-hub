@@ -1,0 +1,29 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "Universal Symbolic Memory Hub" [level=1] [ref=e5]
+    - navigation [ref=e6]:
+      - button "Memory" [ref=e7] [cursor=pointer]
+      - button "LLM Chat" [ref=e8] [cursor=pointer]
+      - button "Decision Tree" [active] [ref=e9] [cursor=pointer]
+    - generic [ref=e33]:
+      - generic [ref=e34]: prolog 3ms
+      - generic [ref=e35]: postgresql 8ms
+      - generic [ref=e36]: embeddings 111ms
+      - generic [ref=e37]: llm 34ms
+  - main [ref=e10]:
+    - generic [ref=e705]:
+      - heading "Decision Tree" [level=2] [ref=e707]
+      - generic [ref=e708]:
+        - heading "Domain" [level=2] [ref=e710]
+        - generic [ref=e712]:
+          - combobox "Decision domain" [ref=e713]
+          - paragraph [ref=e714]: Inputs below are seeded from this domain’s declared keys. The decision itself is routed by the API on the keys you send, not by this selection.
+        - paragraph [ref=e717]: Loading decision tree…
+        - generic [ref=e718]:
+          - heading "Inputs" [level=2] [ref=e719]
+          - button "+ Add field" [ref=e720] [cursor=pointer]
+        - button "Evaluate Decision" [disabled] [ref=e724]
+    - generic [ref=e725]:
+      - heading "Decision Result" [level=2] [ref=e727]
+      - paragraph [ref=e730]: Set some inputs and click "Evaluate Decision" in the left panel.
+  - generic [ref=e731]: "Failed to read the domain registry: tree_registry:active_domain_ids(Ids) failed: The last query was not closed"

@@ -1,0 +1,44 @@
+- generic [ref=f8e3]:
+  - banner [ref=f8e4]:
+    - heading "Universal Symbolic Memory Hub" [level=1] [ref=f8e5]
+    - navigation [ref=f8e6]:
+      - button "Memory" [ref=f8e7] [cursor=pointer]
+      - button "LLM Chat" [ref=f8e8] [cursor=pointer]
+      - button "Decision Tree" [active] [ref=f8e9] [cursor=pointer]
+    - generic [ref=f8e33]:
+      - generic [ref=f8e34]: prolog 1ms
+      - generic [ref=f8e35]: postgresql 3ms
+      - generic [ref=f8e36]: embeddings 51ms
+      - generic [ref=f8e37]: llm 4ms
+  - main [ref=f8e10]:
+    - generic [ref=f8e38]:
+      - heading "Decision Tree" [level=2] [ref=f8e40]
+      - img [ref=f8e43]:
+        - generic [ref=f8e44]:
+          - generic [ref=f8e47] [cursor=pointer]: do_nothing
+          - generic [ref=f8e49] [cursor=pointer]:
+            - generic: monitor_only
+            - generic: temperature > 25
+          - generic [ref=f8e52] [cursor=pointer]:
+            - generic: do_nothing
+            - generic: temperature =< 25
+      - generic [ref=f8e55]:
+        - heading "Inputs" [level=2] [ref=f8e56]
+        - button "+ Add field" [ref=f8e57] [cursor=pointer]
+      - generic [ref=f8e59]:
+        - generic [ref=f8e60]:
+          - textbox "name" [ref=f8e61]: demand
+          - textbox "value" [ref=f8e62]: "50"
+          - button "×" [ref=f8e63] [cursor=pointer]
+        - generic [ref=f8e64]:
+          - textbox "name" [ref=f8e65]: temperature
+          - textbox "value" [ref=f8e66]: "25"
+          - button "×" [ref=f8e67] [cursor=pointer]
+        - generic [ref=f8e68]:
+          - textbox "name" [ref=f8e69]: humidity
+          - textbox "value" [ref=f8e70]: "50"
+          - button "×" [ref=f8e71] [cursor=pointer]
+        - button "Evaluate Decision" [ref=f8e72] [cursor=pointer]
+    - generic [ref=f8e73]:
+      - heading "Decision Result" [level=2] [ref=f8e75]
+      - paragraph [ref=f8e78]: Set some inputs and click "Evaluate Decision".

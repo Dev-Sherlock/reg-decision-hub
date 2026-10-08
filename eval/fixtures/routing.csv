@@ -1,0 +1,14 @@
+name,inputs,query_domain,expected_status,expected_error,expected_leaf,expected_action,expected_owner,expected_domain
+route_energy,"{""demand"": 90, ""temperature"": 35, ""humidity"": 80}",,200,,n7,activate_dehumidifier,optimizer,energy
+route_energy_with_extra_keys,"{""demand"": 90, ""temperature"": 35, ""humidity"": 80, ""unrelated_flag"": true, ""asset_tag"": ""AHU-7""}",,200,,n7,activate_dehumidifier,optimizer,energy
+route_energy_wins_on_overlap,"{""demand"": 90, ""temperature"": 35, ""defect_rate_pct"": 2}",,200,,n3,increase_cooling,optimizer,energy
+route_air_traffic_with_extra_keys,"{""region"": ""north"", ""ice_on_wing_pct"": 15, ""turbulence_severity"": ""severe"", ""fuel_kg"": 4200}",,200,,at3,takeoff_denied_deice,safety_officer,air_traffic
+route_manufacturing,"{""defect_rate_pct"": 2, ""hardness_hrc"": 40}",,200,,qa3,rework_lot,process_engineer,manufacturing
+route_cyber,"{""blast_radius_pct"": 40, ""data_exposed"": true}",,200,,sec4,notify_ciso_and_regulator,ciso,cyber
+route_string_threshold_does_not_match,"{""demand"": ""not-a-number""}",,200,,root,none,system,energy
+route_tie_is_refused,"{""demand"": 90, ""defect_rate_pct"": 2}",,400,ambiguous_domain,,,,
+route_tie_resolved_by_domain,"{""demand"": 90, ""defect_rate_pct"": 2}",manufacturing,200,,qa2,check_hardness,process_engineer,manufacturing
+route_tie_resolved_by_other_domain,"{""demand"": 90, ""defect_rate_pct"": 2}",energy,200,,n1,dispatch_energy,forecaster,energy
+route_unknown_keys_are_refused,"{""unknown_key"": 1}",,400,unknown_domain,,,,
+route_empty_inputs_are_refused,{},,400,unknown_domain,,,,
+route_unknown_domain_is_refused,"{""demand"": 90}",no_such_domain,400,unknown_domain,,,,

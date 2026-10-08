@@ -1,0 +1,10 @@
+name,inputs,expected_leaf,expected_action,expected_owner,expected_domain
+sec_blast_just_over_threshold,"{""blast_radius_pct"": 26, ""affected_users"": 1}",sec6,escalate_to_exec,ciso,cyber
+sec_wide_partial_report,"{""blast_radius_pct"": 40}",sec6,escalate_to_exec,ciso,cyber
+sec_wide_and_exposed,"{""blast_radius_pct"": 40, ""data_exposed"": true}",sec4,notify_ciso_and_regulator,ciso,cyber
+sec_wide_ransomware,"{""blast_radius_pct"": 40, ""data_exposed"": false, ""ransomware_flag"": true}",sec5,isolate_subnet,soc_lead,cyber
+sec_wide_neither,"{""blast_radius_pct"": 40, ""data_exposed"": false}",sec6,escalate_to_exec,ciso,cyber
+sec_blast_exactly_25_many,"{""blast_radius_pct"": 25, ""affected_users"": 5000}",sec2,escalate_to_exec,ciso,cyber
+sec_blast_exactly_25_few,"{""blast_radius_pct"": 25, ""affected_users"": 50}",sec3,triage_containment,soc_lead,cyber
+sec_narrow_many_users,"{""blast_radius_pct"": 10, ""affected_users"": 5000}",sec2,escalate_to_exec,ciso,cyber
+sec_narrow_few_users,"{""blast_radius_pct"": 10, ""affected_users"": 50}",sec3,triage_containment,soc_lead,cyber

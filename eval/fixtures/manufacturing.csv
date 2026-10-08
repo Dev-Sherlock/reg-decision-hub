@@ -1,0 +1,9 @@
+name,inputs,expected_leaf,expected_action,expected_owner,expected_domain
+qa_defects_high,"{""defect_rate_pct"": 8}",qa1,quarantine_lot,qe_engineer,manufacturing
+qa_defects_exactly_5,"{""defect_rate_pct"": 5}",qa2,check_hardness,process_engineer,manufacturing
+qa_hardness_only,"{""defect_rate_pct"": 2}",qa2,check_hardness,process_engineer,manufacturing
+qa_soft,"{""defect_rate_pct"": 2, ""hardness_hrc"": 40}",qa3,rework_lot,process_engineer,manufacturing
+qa_hardness_exactly_45,"{""defect_rate_pct"": 2, ""hardness_hrc"": 45}",qa4,check_coating,process_engineer,manufacturing
+qa_coating_thin,"{""defect_rate_pct"": 2, ""hardness_hrc"": 50, ""coating_um"": 20}",qa5,release_lot,qe_engineer,manufacturing
+qa_coating_thick_ftir,"{""defect_rate_pct"": 2, ""hardness_hrc"": 50, ""coating_um"": 40, ""ftir_flag"": true}",qa7,release_with_deviation,qe_engineer,manufacturing
+qa_coating_thick_no_ftir,"{""defect_rate_pct"": 2, ""hardness_hrc"": 50, ""coating_um"": 40, ""ftir_flag"": false}",qa8,quarantine_lot,qe_engineer,manufacturing
